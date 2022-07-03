@@ -14,6 +14,7 @@ const Test = () => {
 		<div>
 			<input type='number' onChange={(e) => setUpdate('a', e.target.value)} />
 			<input type='number' onChange={(e) => setUpdate('b', e.target.value)} />
+			<span>LJW</span>
 		</div>
 	);
 };
