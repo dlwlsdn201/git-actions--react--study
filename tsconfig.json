@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es5", // 기본
+		"module": "commonjs", // 기본
+		"strict": true, // 기본
+		"esModuleInterop": true, // 기본
+		"outDir": "./dist" // 추가 옵션
+	},
+	"include": ["index.ts"], // index.ts 스크립트 파일을 컴파일 시 포함한다는 의미
+	"exclude": ["node_modules"], // node_modules 더를 컴파일 시 포함시키지 않겠다는 의미
+	"paths": { // import 시, from 경로를 searching 할 디렉터리 설정
+  "*": [
+      "node_modules/*",
+      "src/types/*"
+    ],
+  "@app/*": ["app/*"],
+  "@config/*": ["app/_config/*"],
+  "@environment/*": ["environments/*"],
+  "@shared/*": ["app/_shared/*"],
+  "@helpers/*": ["helpers/*"]
+}
+}
