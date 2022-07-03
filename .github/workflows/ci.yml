@@ -36,6 +36,6 @@ jobs:
         with:
           node-version: 16.x
           cache: 'yarn'
-
+      - run: yarn install --immutable --immutable-cache --check-cache
       - run: yarn ci
       - run: yarn test
