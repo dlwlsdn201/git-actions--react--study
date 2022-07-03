@@ -10,32 +10,15 @@ on:
     branches: [ "main" ]
 
 jobs:
-  setup-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: yarn dependencies
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: install --immutable --immutable-cache --check-cache
-  
   test:
-    needs: setup-dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v3.0.0
-        with: 
-          cmd: install 
-      - uses: borales/actions-yarn@v3.0.0
-        with: 
-          cmd: test 
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'yarn'
-      - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn ci
-      - run: yarn test
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
