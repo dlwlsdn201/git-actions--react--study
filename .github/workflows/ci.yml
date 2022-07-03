@@ -14,10 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: borales/actions-yarn@v3.0.0
+      with: 
+        cmd: install 
+    - uses: borales/actions-yarn@v3.0.0
+      with: 
+        cmd: test 
     - name: Use Node.js 16.x
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
         cache: 'yarn'
-    - run: npm ci
-    - run: npm test
+    - run: yarn ci
+    - run: yarn test
